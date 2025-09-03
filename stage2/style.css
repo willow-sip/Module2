@@ -1,6 +1,5 @@
-table, th, tr, td{
+th, tr, td{
     border: 2px solid black;
-    border-collapse: collapse;
 }
 .table-container{
     width: 600px;
@@ -11,6 +10,8 @@ table, th, tr, td{
 table{
     width: 650px;
     height: auto;
+    border-collapse: collapse;
+    border: 2px solid black;
 }
 th, tr, td{
     padding: 10px 20px;
