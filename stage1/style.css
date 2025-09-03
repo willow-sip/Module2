@@ -1,10 +1,11 @@
-*{
+body{
+    color:blueviolet;
+    text-align: center;
+    width: 100%;
     font-family:'Courier New', Courier, monospace;
 }
-html{
-    color:blueviolet;
-    width: 100vw;
-}
+
+
 a{
     text-decoration: none;
 }
@@ -12,10 +13,7 @@ a{
     text-decoration: underline;
     color:palevioletred;
 }
-body{
-    text-align: center;
-    width: 100%;
-}
+
 
 .round-link {
     display: inline-block;
@@ -33,19 +31,20 @@ body{
     display: block;
 }
 
+
 .info{
-    margin-top: 2vw;
     width: 100%;
-    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 2em 1em;
 }
 .info>section{
     width: 25%;
     height: 100%;
-    padding: 1vw;
+    padding: 10px;
 }
+
 
 .personal-info::first-line{
     color: red;
@@ -59,12 +58,14 @@ body{
     background-color: #dddddd;
 }
 
+
 .work-exp li::marker{
     color: red;
 }
 .work-exp ul, .skills ul{
     text-align: left;
 }
+
 
 .contacts svg{
     color:blueviolet;
@@ -73,12 +74,18 @@ body{
     color: blue;
 }
 
-.relative p{
-    width: 50vw;
+
+.relative{
+    width: 50%;
+    background-color: #dddddd;
+    padding: 1em;
     position: relative;
     top: 30px;
     left: 600px;
-    background-color: #dddddd;
+}
+.relative:first-child{
+    display: block;
+    margin-bottom: 0.5em;
 }
 
 
@@ -89,13 +96,12 @@ div{
     font-size: 18px;
 }
 footer{
-    margin-top: 5vw;
+    margin-top: 100px;
     font-size: 20px;
 }
 
 span{
     color:green;
-
 }
 header span{
     text-transform: uppercase;
