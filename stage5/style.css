@@ -1,0 +1,85 @@
+@keyframes cardLoad {
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg) scale(0.8);
+        background-color: #fff;
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+    }
+}
+
+@keyframes imageGrow {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.card.animate{
+    animation: cardLoad 1.5s ease forwards;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-15px);
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    opacity: 0.8;
+}
+
+.card.clicked {
+    transform: rotateY(30deg) rotateX(10deg) scale(1.1);
+}
+
+figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+    animation: imageGrow 1s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+h2 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4;
+}
