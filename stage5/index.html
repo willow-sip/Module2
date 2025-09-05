@@ -13,32 +13,24 @@
         <h2>Card Title</h2>
     </header>
     <main>
-        <article class="card animate" onclick="clickCard(this)">
-            <figure>
-                <img src="https://i.pinimg.com/736x/2b/fb/03/2bfb033ef2fa57a3144d29cfd8472e06.jpg"
-                    alt="just some image" />
-            </figure>
-            <section>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-                delectus voluptas perferendis fugiat non, quia quos eius fugit debitis
-                quo! Voluptate animi sit perspiciatis voluptatum atque praesentium
-                exercitationem, iste id?
-            </section>
-        </article>
+        <label class="card-wrapper">
+            <input type="checkbox" class="card-toggle" hidden>
+            <article class="card animate" onclick="clickCard(this)">
+                <figure>
+                    <img src="https://i.pinimg.com/736x/2b/fb/03/2bfb033ef2fa57a3144d29cfd8472e06.jpg"
+                    alt="Racoon image" />
+                    <figcaption>Caption for racoon image.</figcaption>
+                </figure>
+                <section>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+                    delectus voluptas perferendis fugiat non, quia quos eius fugit debitis
+                    quo! Voluptate animi sit perspiciatis voluptatum atque praesentium
+                    exercitationem, iste id?</p>
+                </section>
+            </article>
+        </label>
     </main>
 
-    <script>
-        function clickCard(card) {
-            card.classList.toggle('clicked');
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const card = document.querySelector(".card");
-            card.addEventListener("animationend", () => {
-                card.classList.remove("animate");
-            });
-        });
-    </script>
 </body>
 
 </html>

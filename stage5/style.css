@@ -48,7 +48,7 @@ body {
     cursor: pointer;
 }
 .card.animate{
-    animation: cardLoad 1.5s ease forwards;
+    animation: cardLoad 1.5s ease none;
 }
 
 .card:hover {
@@ -57,8 +57,12 @@ body {
     opacity: 0.8;
 }
 
-.card.clicked {
-    transform: rotateY(30deg) rotateX(10deg) scale(1.1);
+.card-wrapper .card {
+  transition: transform 0.5s ease;
+}
+
+.card-wrapper input:checked + .card {
+  transform: rotateY(30deg) rotateX(10deg) scale(1.1);
 }
 
 figure {
