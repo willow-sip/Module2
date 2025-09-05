@@ -79,7 +79,7 @@ main {
 
     .sidebar {
         height: 100px;
-        width: 100%;
+        max-width: 1024px;
     }
 
     .sidebar ul {
