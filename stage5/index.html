@@ -13,32 +13,112 @@
         <h2>Card Title</h2>
     </header>
     <main>
-        <article class="card animate" onclick="clickCard(this)">
-            <figure>
-                <img src="https://i.pinimg.com/736x/2b/fb/03/2bfb033ef2fa57a3144d29cfd8472e06.jpg"
-                    alt="just some image" />
-            </figure>
-            <section>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-                delectus voluptas perferendis fugiat non, quia quos eius fugit debitis
-                quo! Voluptate animi sit perspiciatis voluptatum atque praesentium
-                exercitationem, iste id?
-            </section>
-        </article>
+        <label class="card-wrapper">
+            <input type="checkbox" class="card-toggle" hidden>
+            <article class="card animate" onclick="clickCard(this)">
+                <figure>
+                    <img src="https://i.pinimg.com/736x/2b/fb/03/2bfb033ef2fa57a3144d29cfd8472e06.jpg"
+                    alt="Racoon image" />
+                    <figcaption>Caption for racoon image.</figcaption>
+                </figure>
+                <section>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+                    delectus voluptas perferendis fugiat non, quia quos eius fugit debitis
+                    quo! Voluptate animi sit perspiciatis voluptatum atque praesentium
+                    exercitationem, iste id?</p>
+                </section>
+            </article>
+        </label>
     </main>
 
-    <script>
-        function clickCard(card) {
-            card.classList.toggle('clicked');
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const card = document.querySelector(".card");
-            card.addEventListener("animationend", () => {
-                card.classList.remove("animate");
-            });
-        });
-    </script>
 </body>
 
-</html>
+</html>@keyframes cardLoad {
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg) scale(0.8);
+        background-color: #fff;
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+    }
+}
+
+@keyframes imageGrow {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.card.animate{
+    animation: cardLoad 1.5s ease forwards;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-15px);
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    opacity: 0.8;
+}
+
+.card-wrapper .card {
+  transition: transform 0.5s ease;
+}
+
+.card-wrapper input:checked + .card {
+  transform: rotateY(30deg) rotateX(10deg) scale(1.1);
+}
+
+figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+    animation: imageGrow 1s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+h2 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4;
+}

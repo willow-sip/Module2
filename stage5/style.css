@@ -1,4 +1,39 @@
-@keyframes cardLoad {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Module 2 Stage 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h2>Card Title</h2>
+    </header>
+    <main>
+        <label class="card-wrapper">
+            <input type="checkbox" class="card-toggle" hidden>
+            <article class="card animate" onclick="clickCard(this)">
+                <figure>
+                    <img src="https://i.pinimg.com/736x/2b/fb/03/2bfb033ef2fa57a3144d29cfd8472e06.jpg"
+                    alt="Racoon image" />
+                    <figcaption>Caption for racoon image.</figcaption>
+                </figure>
+                <section>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+                    delectus voluptas perferendis fugiat non, quia quos eius fugit debitis
+                    quo! Voluptate animi sit perspiciatis voluptatum atque praesentium
+                    exercitationem, iste id?</p>
+                </section>
+            </article>
+        </label>
+    </main>
+
+</body>
+
+</html>@keyframes cardLoad {
     0% {
         opacity: 0;
         transform: rotateY(-90deg) scale(0.8);
@@ -48,7 +83,7 @@ body {
     cursor: pointer;
 }
 .card.animate{
-    animation: cardLoad 1.5s ease forwards;
+    animation: cardLoad 1.5s ease none;
 }
 
 .card:hover {
@@ -57,8 +92,12 @@ body {
     opacity: 0.8;
 }
 
-.card.clicked {
-    transform: rotateY(30deg) rotateX(10deg) scale(1.1);
+.card-wrapper .card {
+  transition: transform 0.5s ease;
+}
+
+.card-wrapper input:checked + .card {
+  transform: rotateY(30deg) rotateX(10deg) scale(1.1);
 }
 
 figure {
