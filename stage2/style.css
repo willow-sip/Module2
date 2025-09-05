@@ -1,0 +1,64 @@
+th, tr, td{
+    border: 2px solid black;
+}
+.table-container{
+    width: 600px;
+    height: 400px;
+    overflow: auto;
+    margin: 0 auto;
+}
+table{
+    width: 650px;
+    height: auto;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+th, tr, td{
+    padding: 10px 20px;
+}
+thead{
+    background-color: #ac8585;
+    text-align: center;
+    font-style: italic;
+}
+tfoot th{
+    text-align: right;
+    font-weight: bold;
+}
+tfoot tr:last-child td {
+    font-weight: bold;
+    font-style: italic;
+}
+tbody{
+    display: inline-block;
+    max-width: 150px;
+}
+tbody td{
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+form{
+    width: 600px;
+    margin: 0 auto;
+    caret-color: #ac8585;
+}
+form input:focus{
+    outline: 2px solid #ac8585;
+}
+#aboutYou{
+    resize: horizontal;
+}
+.change-cursor{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #ac8585;
+}
+.change-cursor:hover{
+    cursor:grabbing;
+}
